@@ -61,16 +61,13 @@ header {
     font-weight: 600;
 }
 
-.nav {
-    
-}
-
 .nav a, .nav-responsive a {
     font-size: 1.2rem;
     color: var(--text-color);
     padding: 0.5rem 1rem;
     transition: 0.4s;
 }
+
 
 .nav a:hover, .nav-responsive a:hover {
     color: var(--main-color);
