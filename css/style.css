@@ -1,12 +1,15 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@100..900&display=swap');
 
 :root {
     --main-color: #00eeff;
     --text-color: #ffffff;
-    --bg-color-01: #1f242d;
-    --bg-color-02: #323946;
-    --color-00: #0000001a;
+    --bg-color-01: #171023;
+    --bg-color-02: #051c47;
+    --color-00: #eb2d2dbd;
+    --box-shadow-color-00: #000000bd;
+    --transparent-color-00: #00000000;
 }
 
 * {
@@ -40,13 +43,26 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    box-shadow: 0 0.12rem 0.25rem 0.25rem var(--box-shadow-color-00);
 }
 
 .logo {
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.logo2 {
+    font-family: "Sour Gummy", sans-serif;
     font-size: 1.7rem;
     color: var(--text-color);
     font-weight: 600;
-    cursor: default;
+}
+
+.nav {
+    
 }
 
 .nav a, .nav-responsive a {
@@ -79,12 +95,32 @@ span{
     border-right: solid 0.6rem;
     border-bottom: solid 0.6rem;
     border-image: linear-gradient(135deg, transparent 50%, var(--main-color) ) 1;
+    background-image: "../assets/imagens/hacker.png";
+    background-size: cover;
 }
 
 .about-img {
     border-left: solid 0.6rem;
     border-bottom: solid 0.6rem;
     border-image: linear-gradient(225deg, transparent 50%, var(--main-color) ) 1;
+}
+
+.about-icons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: start;
+    color: var(--main-color);
+    font-size: 40px;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-icons i {
+    background: -webkit-linear-gradient(70deg, #2709ad 20%, #df26a7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .home-img img, .about-img img {
@@ -102,16 +138,30 @@ span{
 .home-content h1, .about-content h1 {
     font-weight: 700;
     line-height: 1.3;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: start;
 }
 
 .home-content h3, .about-content h3 {
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
+    justify-items: start;
+    text-align: start;
+    width: 100%;
 }
 
 .home-content p, .about-content p {
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     text-align: justify;
+    font-size: 1.2rem;
+}
+
+.span-gradient {
+    background: -webkit-linear-gradient(70deg, #2709ad 40%, #df26a7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .services h2, .portifolio h2, .contact h2 {
@@ -123,7 +173,8 @@ span{
 .services-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .services-box {
@@ -132,6 +183,7 @@ span{
     justify-content: space-between;
     min-height: 25rem;
     margin: 0rem 0.5rem;
+    max-width: 450px;
 }
 
 .services-container .services-box {
@@ -165,6 +217,34 @@ span{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.about-content span {
+    color: var(--main-color);
+    
+}
+
+.whatsapp-div {
+    position: fixed;
+    bottom: 4rem;
+    left: 4rem;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem; /* w-16 */
+    height: 4.5rem; /* h-16 */
+    background-color: var(--transparent-color-00); /* bg-[#14e141e5] */
+    color: var(--transparent-color-00); /* bg-[#14e141e5] */
+    box-shadow: 0 0.12rem 0.25rem 0.25rem var(--box-shadow-color-00);
+    border-radius: 9999px; /* rounded-full */
+    overflow: hidden;
+}
+
+.whatsapp-icon {
+    color: #129e19;
+    font-size: 64px;
+}
+
 /* button */
 .btn {
     display: inline-block;
@@ -190,16 +270,21 @@ span{
 }
 
 .portifolio-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     display: grid;
     gap: 1.2rem;
 }
 
 .portifolio-box {
+    max-height: 400px;
+    width: 100%;
+    aspect-ratio: 1.5;
     position: relative;
     border-radius: 0.6rem;
     box-shadow: 0 0 0.6rem var(--bg-color-01);
     overflow: hidden;
     display: flex;
+    
 }
 
 .portifolio-box img {
@@ -207,8 +292,9 @@ span{
     transition: 0.5s ease;
 }
 
-.portifolio-box img:hover {
+.portifolio-box:hover img {
     transform: scale(1.1);
+    opacity: 0.2;
 }
 
 .portifolio-box .portifolio-layer {
@@ -325,7 +411,7 @@ footer p {
     transition: 0.5s ease;
 }
 
-.bx.bxl-github{
+.bx.bxl-github-edit{
     display: inline-flex;
     justify-content: center;
     align-items: center;
